@@ -1,0 +1,103 @@
+/* Genel resetleme ve box-sizing ayarları */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Genel vücut ayarları */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #0066cc, #ff6600, #0066cc, #ff6600); /* Daha keskin geçiş */
+    background-size: 400% 400%;
+    animation: gradientAnimation 6s ease infinite;
+    font-family: 'Roboto', sans-serif; /* Modern yazı tipi */
+    color: #ffffff; /* Beyaz yazı rengi */
+}
+
+/* Container ayarları */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9); /* Hafif opak beyaz */
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Başlık */
+h1 {
+    font-size: 36px;
+    font-family: 'Montserrat', sans-serif; /* Başlık yazı tipi */
+    color: #ff6600; /* Turuncu başlık */
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px; /* Başlık harfleri arasında boşluk */
+    text-transform: uppercase; /* Başlık büyük harflerle */
+}
+
+/* Metin kısmı */
+p {
+    font-size: 20px;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-weight: 300; /* Hafif ince yazı */
+}
+
+/* Geri gitme butonu */
+.back-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #0066cc;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px; /* Dairesel buton */
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    background-color: #ff6600;
+    transform: scale(1.1); /* Hover efektinde büyüme */
+}
+
+/* Hover efektine animasyon */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Sayfa yüklenirken container'ın yavaşça görünmesini sağlayan animasyon */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

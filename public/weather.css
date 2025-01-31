@@ -1,0 +1,105 @@
+/* Genel ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Yazı tipi */
+}
+
+/* Sayfa düzeni */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #0066cc, #ff6600, #0066cc, #ff6600); /* Daha keskin geçiş */
+    background-size: 400% 400%;
+    animation: gradientAnimation 6s ease infinite;
+    font-family: 'Roboto', sans-serif; /* Modern yazı tipi */
+    color: #ffffff; /* Beyaz yazı rengi */
+}
+/* Hava durumu kartı */
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9); /* Hafif opak beyaz */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 420px; /* Kart boyutu */
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+/* Başlık */
+h1 {
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif; /* Modern başlık fontu */
+    color: #ff6600; /* Mavi başlık */
+    margin-bottom: 20px;
+    letter-spacing: 1px; /* Harfler arası mesafe */
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Hava durumu derecesi */
+p.temp {
+    font-size: 48px; /* Dereceyi büyük yapalım */
+    color: grey; /* Kırmızımsı tonlar */
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+/* Diğer bilgiler */
+p {
+    font-size: 22px; /* Diğer metinleri biraz daha büyük yapalım */
+    color: #333; /* Koyu gri metin */
+    margin: 12px 0;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Geri butonu */
+.back-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #0066cc;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px; /* Dairesel buton */
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    background-color: #ff6600;
+    transform: scale(1.1); /* Hover efektinde büyüme */
+}
+
+/* Arka plan animasyonu */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Fade-in animasyonu */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Yavaşça yukarı doğru kayar */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Website</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script>
+        function toggleForm(cardType) {
+            // Tüm kartları gizle
+            const allCards = document.querySelectorAll('.card');
+            allCards.forEach(card => card.style.display = 'none');
+
+            // Seçilen kartı göster
+            const targetCard = document.getElementById(cardType);
+            targetCard.style.display = 'block';
+        }
+
+        function goBack() {
+            // Formları gizle ve kartları göster
+            const forms = document.querySelectorAll('.form-container');
+            forms.forEach(form => form.style.display = 'none');
+
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => card.style.display = 'block');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Weather Card -->
+        <div class="card" id="weatherCard" onclick="toggleForm('weatherForm')">
+            <div class="card-title">How Is It The Weather There? 🌦️</div>
+            <div class="card-subtitle">Search for any city you want and get weather information</div>
+        </div>
+
+        <!-- UV Card -->
+        <div class="card" id="uvCard" onclick="toggleForm('uvForm')">
+            <div class="card-title">Should You Wear Sunscreen Today? 😎</div>
+            <div class="card-subtitle">Search for any city you want and get UV information</div>
+        </div>
+
+        <!-- Air Pollution Card -->
+        <div class="card" id="pollutionCard" onclick="toggleForm('pollutionForm')">
+            <div class="card-title">Should You Go Out Today? 🚪</div>
+            <div class="card-subtitle">Search for any city you want and get air pollution information</div>
+        </div>
+
+        <!-- Weather Form (Initially hidden) -->
+        <div id="weatherForm" class="form-container" style="display: none;">
+            <form action="/get-weather" method="POST">
+                <input type="text" name="city" placeholder="Enter city name" required />
+                <button type="submit">Get Weather</button>
+            </form>
+            <button onclick="goBack()">Back</button> <!-- Geri Butonu -->
+        </div>
+
+        <!-- UV Form (Initially hidden) -->
+        <div id="uvForm" class="form-container" style="display: none;">
+            <form action="/get-uv" method="POST">
+                <input type="text" name="city" placeholder="Enter city name" required />
+                <button type="submit">Get UV Info</button>
+            </form>
+            <button onclick="goBack()">Back</button> <!-- Geri Butonu -->
+        </div>
+
+        <!-- Pollution Form (Initially hidden) -->
+        <div id="pollutionForm" class="form-container" style="display: none;">
+            <form action="/get-pollution" method="POST">
+                <input type="text" name="city" placeholder="Enter city name" required />
+                <button type="submit">Get Pollution Info</button>
+            </form>
+            <button onclick="goBack()">Back</button> <!-- Geri Butonu -->
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.classList.add('show');
+            });
+        };
+    </script>
+    
+</body>
+</html>

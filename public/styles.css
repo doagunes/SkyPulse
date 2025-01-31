@@ -1,0 +1,157 @@
+/* Genel resetleme ve box-sizing ayarları */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #4e9ef1, #ffbc00, #4e9ef1, #ffbc00); /* Mavi ve sarı geçişi */
+    background-size: 400% 400%; /* Yanar döner efekti */
+    animation: gradientAnimation 6s ease infinite; /* Arka plan animasyonu */
+    font-family: 'Poppins', sans-serif;  /* Yazı tipi */
+}
+
+/* Kartların bulunduğu container */
+.container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Kart tasarımı */
+.card {
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    padding: 25px;
+    text-align: center;
+    color: #333; /* Yazı rengi koyu gri */
+    opacity: 0;
+    animation: fadeIn 2.0s ease forwards; /* Yavaşça görünme efekti */
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+.card:active {
+    transform: scale(0.95);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-size: 28px;
+    color: #ff4500;  /* Başlık rengi turuncu */
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;  /* Başlık yazı tipi */
+}
+
+.card-subtitle {
+    font-size: 20px;
+    color: #555;  /* Alt başlık rengi daha yumuşak gri */
+    opacity: 0.8;
+}
+
+/* Formlar */
+.form-container {
+    display: none; /* Başlangıçta form gizli */
+    width: 400px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInForm 1s ease forwards; /* Yavaşça görünme efekti */
+}
+
+/* Input ve buton tasarımları */
+.form-container input {
+    width: 80%;
+    padding: 15px;
+    font-size: 18px;
+    border: 2px solid #4e9ef1;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-container input:focus {
+    border-color: #ffbc00;
+}
+
+.form-container button {
+    width: 80%;
+    padding: 15px 25px;
+    background-color: #4e9ef1;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.form-container button:hover {
+    background-color: #ffbc00;
+}
+
+/* Arka plan animasyonu */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Kartların yavaşça görünmesini sağlayan animasyon */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);  /* Yavaşça yukarı doğru hareket */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);  /* Finalde eski konumuna dönme */
+    }
+}
+
+/* Search kısmı formunun yavaşça görünmesini sağlayan animasyon */
+@keyframes fadeInForm {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Yavaşça yukarı doğru hareket */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Finalde eski konumuna dönme */
+    }
+}
