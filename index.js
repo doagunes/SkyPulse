@@ -41,7 +41,6 @@ app.post("/get-weather", async (req,res) => {
         const result = response.data;
         const weatherType = result.weather[0].main.toLowerCase(); 
         const activities = getActivitiesForWeather(weatherType);
-
         res.render("weather.ejs", {
             weather: result,
             activities: activities,
