@@ -48,12 +48,12 @@ h1 {
 
 /* Metin kısmı */
 p {
-    font-size: 20px;
+    font-size: 22px;
     color: #333333;
     text-align: center;
     margin-bottom: 20px;
     line-height: 1.8;
-    font-weight: 300; /* Hafif ince yazı */
+    
 }
 
 /* Geri gitme butonu */
