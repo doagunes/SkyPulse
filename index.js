@@ -14,13 +14,13 @@ app.get("/", (req, res) => {
 });
 
 const weatherActivities = {
-    clear: ["Go to the beach", "Outdoor workout", "Cycling", "Picnic", "Jogging in the park", "Outdoor photography"],
+    clear: ["Go to the beach", "Cycling", "Picnic", "Jogging in the park", "Outdoor photography"],
     clouds: ["Visit a museum", "Explore an indoor cafe", "Go to an art gallery", "Attend a cooking class"],
-    rain: ["Go to the cinema", "Enjoy a cozy indoor coffee", "Visit an aquarium", "Rainy day hike (wear waterproofs)", "Read a book at home"],
-    snow: ["Go skiing", "Play in the snow", "Build a snowman", "Take a winter walk", "Visit a winter market"],
-    drizzle: ["Walk in the drizzle with an umbrella", "Visit an indoor market", "Enjoy a cup of coffee inside", "Explore a bookstore"],
+    rain: ["Enjoy a cozy indoor coffee", "Rainy day hike (wear waterproofs)", "Read a book at home"],
+    snow: ["Go skiing", "Play in the snow", "Build a snowman", "Visit a winter market"],
+    drizzle: ["Walk in the drizzle with an umbrella", "Enjoy a cup of coffee inside", "Explore a bookstore"],
     thunderstorm: ["Stay indoors", "Watch a movie", "Visit a museum", "Cook a meal at home"],
-    mist: ["Take a morning walk in the mist", "Indoor activities", "Explore a quiet park", "Read a book in a cozy space"],
+    mist: ["Take a morning walk in the mist", "Explore a quiet park", "Read a book in a cozy space"],
     fog: ["Stay indoors", "Enjoy a warm drink", "Visit a cafe", "Have a cozy afternoon at home"],
     haze: ["Relax indoors", "Go for a casual stroll", "Visit a spa", "Read or enjoy a hobby indoors"],
     dust: ["Stay indoors", "Indoor activities", "Avoid outdoor exposure", "Clean up indoors"],
