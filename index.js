@@ -13,13 +13,38 @@ app.get("/", (req, res) => {
     res.render("index.ejs");
 });
 
+const weatherActivities = {
+    clear: ["Go to the beach", "Outdoor workout", "Cycling", "Picnic", "Jogging in the park", "Outdoor photography"],
+    clouds: ["Visit a museum", "Explore an indoor cafe", "Go to an art gallery", "Attend a cooking class"],
+    rain: ["Go to the cinema", "Enjoy a cozy indoor coffee", "Visit an aquarium", "Rainy day hike (wear waterproofs)", "Read a book at home"],
+    snow: ["Go skiing", "Play in the snow", "Build a snowman", "Take a winter walk", "Visit a winter market"],
+    drizzle: ["Walk in the drizzle with an umbrella", "Visit an indoor market", "Enjoy a cup of coffee inside", "Explore a bookstore"],
+    thunderstorm: ["Stay indoors", "Watch a movie", "Visit a museum", "Cook a meal at home"],
+    mist: ["Take a morning walk in the mist", "Indoor activities", "Explore a quiet park", "Read a book in a cozy space"],
+    fog: ["Stay indoors", "Enjoy a warm drink", "Visit a cafe", "Have a cozy afternoon at home"],
+    haze: ["Relax indoors", "Go for a casual stroll", "Visit a spa", "Read or enjoy a hobby indoors"],
+    dust: ["Stay indoors", "Indoor activities", "Avoid outdoor exposure", "Clean up indoors"],
+    sand: ["Stay indoors", "Go to a protected area", "Wear protective clothing if outside"],
+    ash: ["Stay indoors", "Avoid outdoor activities", "Stay safe from volcanic ash"],
+    squall: ["Stay indoors", "Seek shelter", "Avoid outdoor activities", "Wait for the squall to pass"],
+    tornado: ["Take shelter immediately", "Stay in a safe, strong building", "Stay away from windows and doors"]
+};
+
+function getActivitiesForWeather(weatherType) {
+    return weatherActivities[weatherType] || ["No activity suggestions available for this weather type."];
+}
+
 app.post("/get-weather", async (req,res) => {
     const city = req.body["city"];
     try{
         const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${yourAPIKey}&units=metric`);
         const result = response.data;
+        const weatherType = result.weather[0].main.toLowerCase(); 
+        const activities = getActivitiesForWeather(weatherType);
+
         res.render("weather.ejs", {
             weather: result,
+            activities: activities,
         });
     }catch{
         console.log(error);

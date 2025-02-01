@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Website</title>
+    <title>SkyPulse</title>
     <link rel="stylesheet" href="/styles.css">
     <script>
         function toggleForm(cardType) {
@@ -27,6 +27,10 @@
     </script>
 </head>
 <body>
+    <div class="typing-container">
+        <h1 id="dynamic-text" class="typing-text"></h1>
+    </div>
+
     <div class="container">
         <!-- Weather Card -->
         <div class="card" id="weatherCard" onclick="toggleForm('weatherForm')">
@@ -52,7 +56,7 @@
                 <input type="text" name="city" placeholder="Enter city name" required />
                 <button type="submit">Get Weather</button>
             </form>
-            <button onclick="goBack()">Back</button> <!-- Geri Butonu -->
+            <a href="/" class="back-button">Back to Home</a> <!-- Geri Butonu -->
         </div>
 
         <!-- UV Form (Initially hidden) -->
@@ -61,7 +65,7 @@
                 <input type="text" name="city" placeholder="Enter city name" required />
                 <button type="submit">Get UV Info</button>
             </form>
-            <button onclick="goBack()">Back</button> <!-- Geri Butonu -->
+            <a href="/" class="back-button">Back to Home</a><!-- Geri Butonu -->
         </div>
 
         <!-- Pollution Form (Initially hidden) -->
@@ -70,7 +74,7 @@
                 <input type="text" name="city" placeholder="Enter city name" required />
                 <button type="submit">Get Pollution Info</button>
             </form>
-            <button onclick="goBack()">Back</button> <!-- Geri Butonu -->
+            <a href="/" class="back-button">Back to Home</a> <!-- Geri Butonu -->
         </div>
     </div>
 
@@ -82,6 +86,34 @@
             });
         };
     </script>
-    
+
+<script>
+    const textArray = [
+        "Welcome to SkyPulse",
+        "Real-time weather updates",
+        "UV index insights",
+        "Air pollution tracking"
+    ];
+
+    let textIndex = 0;
+    const dynamicText = document.getElementById("dynamic-text");
+
+    function changeText() {
+        dynamicText.style.opacity = 0; // Önce yazıyı gizle
+        setTimeout(() => {
+            dynamicText.textContent = textArray[textIndex]; // Yeni metni ekle
+            dynamicText.style.opacity = 1; // Yavaşça görünmesini sağla
+            textIndex = (textIndex + 1) % textArray.length; // Sonraki metne geç
+        }, 1000); // 1 saniye sonra metni değiştir
+    }
+
+    setInterval(changeText, 3000); // Her 3 saniyede bir değiştir
+
+    document.addEventListener("DOMContentLoaded", function () {
+        changeText(); // Sayfa yüklendiğinde başlat
+    });
+</script>
+
+
 </body>
 </html>

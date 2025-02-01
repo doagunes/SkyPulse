@@ -27,7 +27,7 @@ body {
 /* Kart tasarımı */
 .card {
     width: 400px;
-    height: 300px;
+    height: 200px;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
@@ -58,7 +58,7 @@ body {
 
 .card-title {
     font-size: 28px;
-    color: #ff4500;  /* Başlık rengi turuncu */
+    color: #3C3D37;  
     margin-bottom: 15px;
     font-family: 'Montserrat', sans-serif;  /* Başlık yazı tipi */
 }
@@ -111,12 +111,13 @@ body {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     margin-top: 20px;
 }
 
 .form-container button:hover {
     background-color: #ffbc00;
+    transform: scale(1.1);
 }
 
 /* Arka plan animasyonu */
@@ -155,3 +156,59 @@ body {
         transform: translateY(0); /* Finalde eski konumuna dönme */
     }
 }
+
+/* Geri Butonu */
+.back-button {
+    width: 80%;
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #4e9ef1;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px; /* Dairesel buton */
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Alt boşluk */
+}
+
+.back-button:hover {
+    background-color: #ffbc00;
+    transform: scale(1.1); /* Hover efektinde büyüme */
+}
+
+.typing-text {
+    font-size: 80px; /* Yazıyı büyüt */
+    font-weight: bold;
+    text-align: center;
+    color: white; /* Yazıyı beyaz yap */
+    margin-top: 60px; /* Sayfanın yukarısına yaklaştır */
+    width: 100%; /* Ortalamak için genişliği tam yap */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.typing-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20px; 
+}
+
+
+/* Yanıp sönen cursor animasyonu */
+@keyframes blinkCursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+

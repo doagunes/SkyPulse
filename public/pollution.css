@@ -11,7 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(45deg, #0066cc, #ff6600, #0066cc, #ff6600); /* Daha keskin geçiş */
+    background: linear-gradient(45deg, #86A7FC, grey, #86A7FC, grey); /* Daha keskin geçiş */
     background-size: 400% 400%;
     animation: gradientAnimation 6s ease infinite;
     font-family: 'Roboto', sans-serif; /* Modern yazı tipi */
@@ -39,7 +39,7 @@ body {
 h1 {
     font-size: 36px;
     font-family: 'Montserrat', sans-serif; /* Başlık yazı tipi */
-    color: #ff6600; /* Turuncu başlık */
+    color: #3C3D37; /* Turuncu başlık */
     text-align: center;
     margin-bottom: 20px;
     letter-spacing: 1px; /* Başlık harfleri arasında boşluk */
@@ -58,13 +58,14 @@ p {
 
 /* Geri gitme butonu */
 .back-button {
+    width: 40%;
     display: inline-block;
     padding: 15px 30px;
-    background-color: #0066cc;
+    background-color: #4e9ef1;
     color: white;
     font-size: 18px;
     border: none;
-    border-radius: 30px; /* Dairesel buton */
+    border-radius: 10px; /* Dairesel buton */
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -73,7 +74,7 @@ p {
 }
 
 .back-button:hover {
-    background-color: #ff6600;
+    background-color: #ffbc00;
     transform: scale(1.1); /* Hover efektinde büyüme */
 }
 

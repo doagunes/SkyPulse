@@ -7,12 +7,26 @@
     <link rel="stylesheet" href="/weather.css">
 </head>
 <body>
-    <div class="container">
-        <h1> <%= weather.name %></h1>
-        <p class="temp"><%= parseInt(weather.main.temp) %>°C</p>
-        <p><%= weather.weather[0].description %></p>
-        <p>Wind Speed: <%= weather.wind.speed %> m/s</p>
-        <a href="/" class="back-button">Back to Home</a>
+    <div class="main-container">
+        <!-- Hava Durumu Kartı -->
+        <div class="weather-container">
+            <h1><%= weather.name %></h1>
+            <p class="temp"><%= parseInt(weather.main.temp) %>°C</p>
+            <p><%= weather.weather[0].description %></p>
+            <p>Wind Speed: <%= weather.wind.speed %> m/s</p>
+        </div>
+
+        <!-- Aktivite Kartı -->
+        <div class="activity-container">
+            <h2>Suggested Activities:</h2>
+            <ul>
+                <% activities.forEach(function(activity) { %>
+                    <li><%= activity %></li>
+                <% }); %>
+            </ul>
+        </div>
     </div>
+
+    <a href="/" class="back-button">Back to Home</a>
 </body>
 </html>

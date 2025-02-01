@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif; /* Yazı tipi */
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Sayfa düzeni */
@@ -12,71 +12,107 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(45deg, #0066cc, #ff6600, #0066cc, #ff6600); /* Daha keskin geçiş */
+    background: linear-gradient(45deg, #CDC1FF, #FFDDAE, #CDC1FF, #FFDDAE);
     background-size: 400% 400%;
     animation: gradientAnimation 6s ease infinite;
-    font-family: 'Roboto', sans-serif; /* Modern yazı tipi */
-    color: #ffffff; /* Beyaz yazı rengi */
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    flex-direction: column; /* Sayfayı dikey olarak yerleştiriyoruz */
+    justify-content: center; /* Kartları ve butonu tam ortada yerleştiriyoruz */
+    align-items: center; /* Ortalamayı yatayda da sağlıyoruz */
 }
-/* Hava durumu kartı */
-.container {
+
+/* Ana konteyner */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+/* Hava durumu kartı ve aktivite kartı */
+.weather-container, .activity-container {
     text-align: center;
-    background: rgba(255, 255, 255, 0.9); /* Hafif opak beyaz */
+    background: rgba(255, 255, 255, 0.9);
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    width: 420px; /* Kart boyutu */
-    opacity: 0;
+    width: 420px;
     animation: fadeIn 1s ease-in forwards;
 }
 
 /* Başlık */
 h1 {
     font-size: 28px;
-    font-family: 'Montserrat', sans-serif; /* Modern başlık fontu */
-    color: #ff6600; /* Mavi başlık */
+    font-family: 'Montserrat', sans-serif;
+    color: #3C3D37;
     margin-bottom: 20px;
-    letter-spacing: 1px; /* Harfler arası mesafe */
+    letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: bold;
 }
 
 /* Hava durumu derecesi */
 p.temp {
-    font-size: 48px; /* Dereceyi büyük yapalım */
-    color: grey; /* Kırmızımsı tonlar */
+    font-size: 48px;
+    color: grey;
     font-weight: bold;
     margin: 15px 0;
 }
 
 /* Diğer bilgiler */
 p {
-    font-size: 22px; /* Diğer metinleri biraz daha büyük yapalım */
-    color: #333; /* Koyu gri metin */
+    font-size: 22px;
+    color: #333;
     margin: 12px 0;
     line-height: 1.6;
     font-weight: 400;
 }
 
+/* Aktivite kısmı */
+h2 {
+    font-size: 24px;
+    color: #3C3D37;
+    margin-top: 5px; 
+    margin-bottom: 20px; 
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 20px;
+    color: #333;
+    margin: 10px 0;
+    text-align: left;
+}
+
 /* Geri butonu */
 .back-button {
+    width: 20%;
     display: inline-block;
     padding: 15px 30px;
-    background-color: #0066cc;
+    background-color: #4e9ef1;
     color: white;
     font-size: 18px;
     border: none;
-    border-radius: 30px; /* Dairesel buton */
+    border-radius: 10px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.2s ease;
     margin-top: 20px;
+    align-self: center; /* Butonu ortalamak için */
 }
 
 .back-button:hover {
-    background-color: #ff6600;
-    transform: scale(1.1); /* Hover efektinde büyüme */
+    background-color: #ffbc00;
+    transform: scale(1.1);
 }
 
 /* Arka plan animasyonu */
@@ -96,7 +132,7 @@ p {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px); /* Yavaşça yukarı doğru kayar */
+        transform: translateY(20px);
     }
     to {
         opacity: 1;

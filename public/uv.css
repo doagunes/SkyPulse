@@ -11,7 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(45deg, #007f5f, #00b4d8, #007f5f, #00b4d8); /* Green & Blue gradient */
+    background: linear-gradient(45deg, #EF9595, #EFD595, #EF9595, #EFD595); /* Green & Blue gradient */
     background-size: 400% 400%;
     animation: gradientAnimation 6s ease infinite;
     font-family: 'Roboto', sans-serif;
@@ -39,7 +39,7 @@ body {
 h1 {
     font-size: 36px;
     font-family: 'Montserrat', sans-serif;
-    color: #007f5f; /* Green color */
+    color: #3C3D37; /* Green color */
     text-align: center;
     margin-bottom: 20px;
     letter-spacing: 1px;
@@ -58,13 +58,14 @@ h1 {
 
 /* Back Button */
 .back-button {
+    width: 40%;
     display: inline-block;
     padding: 15px 30px;
-    background-color: #00b4d8;
+    background-color: #4e9ef1;
     color: white;
     font-size: 18px;
     border: none;
-    border-radius: 30px;
+    border-radius: 10px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -73,7 +74,7 @@ h1 {
 }
 
 .back-button:hover {
-    background-color: #007f5f;
+    background-color: #ffbc00;
     transform: scale(1.1);
 }
 
