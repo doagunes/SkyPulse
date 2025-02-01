@@ -34,9 +34,9 @@ app.post("/get-uv", async (req,res) => {
         const lat = geocodeResponse.data.coord.lat;
         const lon = geocodeResponse.data.coord.lon
 
-        const response = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${yourAPIKey}`);
+        const response = await axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=uv_index_max&timezone=auto`);
         const result = response.data;
-        const uvScale = result.data[0].uvi;
+        const uvScale = result.daily.uv_index_max[0];
         let sentText = "";
         if(uvScale < 2){
             sentText = "Low risk. No sun protection needed.😌";
