@@ -1,0 +1,103 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background Styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #007f5f, #00b4d8, #007f5f, #00b4d8); /* Green & Blue gradient */
+    background-size: 400% 400%;
+    animation: gradientAnimation 6s ease infinite;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Title */
+h1 {
+    font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+    color: #007f5f; /* Green color */
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* UV Info Text */
+.uv-text {
+    font-size: 22px;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Back Button */
+.back-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #00b4d8;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    background-color: #007f5f;
+    transform: scale(1.1);
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
