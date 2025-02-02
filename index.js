@@ -47,11 +47,14 @@ app.post("/get-weather", async (req,res) => {
         });
     }catch (error) {
         console.error("Error:", error.response ? error.response.data : error.message);
-
         if (error.response && error.response.status === 404) {
-            res.send("404 Not Found. Please enter a valid city");
+            res.render("error.ejs", {
+                message: "404 Not Found. Please Enter a Valid City!"
+            });
         } else {
-            res.send("Please try again!");
+            res.render("error.ejs", {
+                message: "Please try again!"
+            });
         }
     }
 });
@@ -85,11 +88,14 @@ app.post("/get-uv", async (req,res) => {
         });
     }catch (error) {
         console.error("Error:", error.response ? error.response.data : error.message);
-
         if (error.response && error.response.status === 404) {
-            res.send("404 Not Found. Please enter a valid city");
+            res.render("error.ejs", {
+                message: "404 Not Found. Please Enter a Valid City!"
+            });
         } else {
-            res.send("Please try again!");
+            res.render("error.ejs", {
+                message: "Please try again!"
+            });
         }
     }
 });
@@ -122,11 +128,14 @@ app.post("/get-pollution", async (req,res) => {
         });
     }catch (error) {
         console.error("Error:", error.response ? error.response.data : error.message);
-
         if (error.response && error.response.status === 404) {
-            res.send("404 Not Found. Please enter a valid city");
+            res.render("error.ejs", {
+                message: "404 Not Found. Please Enter a Valid City!"
+            });
         } else {
-            res.send("Please try again!");
+            res.render("error.ejs", {
+                message: "Please try again!"
+            });
         }
     }
 });
