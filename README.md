@@ -22,6 +22,8 @@ Express.js
 
 EJS (Embedded JavaScript Templates)
 
+REST API
+
 Axios (for API requests)
 
 Bootstrap (for styling)
