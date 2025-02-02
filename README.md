@@ -39,7 +39,8 @@ Open-Meteo API (for UV index data)
 ![image](https://github.com/user-attachments/assets/2a37e9fd-4a39-4b8f-9f74-a09af8e67ccd)
 ![image](https://github.com/user-attachments/assets/59348a4e-07e0-4d97-a175-0972d4000677)
 
-### Weather Information Activity recommendations vary depending on weather conditions.
+### Weather Information 
+Activity recommendations vary depending on weather conditions.
 ![image](https://github.com/user-attachments/assets/e2f94317-ce4e-4f2d-a518-aec3938a773e)
 
 ### UV Information
