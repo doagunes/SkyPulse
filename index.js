@@ -14,12 +14,12 @@ app.get("/", (req, res) => {
 });
 
 const weatherActivities = {
-    clear: ["Go to the beach", "Cycling", "Picnic", "Jogging in the park", "Outdoor photography"],
+    clear: ["Cycling", "Picnic", "Jogging in the park", "Outdoor photography"],
     clouds: ["Visit a museum", "Explore an indoor cafe", "Go to an art gallery", "Attend a cooking class"],
     rain: ["Enjoy a cozy indoor coffee", "Rainy day hike (wear waterproofs)", "Read a book at home"],
     snow: ["Go skiing", "Play in the snow", "Build a snowman", "Visit a winter market"],
     drizzle: ["Walk in the drizzle with an umbrella", "Enjoy a cup of coffee inside", "Explore a bookstore"],
-    thunderstorm: ["Stay indoors", "Watch a movie", "Visit a museum", "Cook a meal at home"],
+    thunderstorm: ["Stay indoors", "Watch a movie", "Cook a meal at home"],
     mist: ["Take a morning walk in the mist", "Explore a quiet park", "Read a book in a cozy space"],
     fog: ["Stay indoors", "Enjoy a warm drink", "Visit a cafe", "Have a cozy afternoon at home"],
     haze: ["Relax indoors", "Go for a casual stroll", "Visit a spa", "Read or enjoy a hobby indoors"],
@@ -45,9 +45,14 @@ app.post("/get-weather", async (req,res) => {
             weather: result,
             activities: activities,
         });
-    }catch{
-        console.log(error);
-        res.send("Error occurred while fetching weather data. Please try again.");
+    }catch (error) {
+        console.error("Error:", error.response ? error.response.data : error.message);
+
+        if (error.response && error.response.status === 404) {
+            res.send("404 Not Found. Please enter a valid city");
+        } else {
+            res.send("Please try again!");
+        }
     }
 });
 
@@ -78,9 +83,14 @@ app.post("/get-uv", async (req,res) => {
             text: sentText,
             city: city,
         });
-    }catch(error){
-        console.log(error);
-        res.send("Error occurred while fetching weather data. Please try again.");
+    }catch (error) {
+        console.error("Error:", error.response ? error.response.data : error.message);
+
+        if (error.response && error.response.status === 404) {
+            res.send("404 Not Found. Please enter a valid city");
+        } else {
+            res.send("Please try again!");
+        }
     }
 });
 
@@ -110,9 +120,14 @@ app.post("/get-pollution", async (req,res) => {
             city: city,
             text: sentText,
         });
-    }catch(error){
-        console.log(error);
-        res.send("Error occurred while fetching weather data. Please try again.");
+    }catch (error) {
+        console.error("Error:", error.response ? error.response.data : error.message);
+
+        if (error.response && error.response.status === 404) {
+            res.send("404 Not Found. Please enter a valid city");
+        } else {
+            res.send("Please try again!");
+        }
     }
 });
 
