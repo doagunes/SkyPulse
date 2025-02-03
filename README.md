@@ -53,7 +53,7 @@ Gives recommendations based on UV index.
 Gives recommendations based on air pollution rate.
 ![image](https://github.com/user-attachments/assets/c26803a2-75f1-40f3-9f79-29938d17ff7f)
 
-### Error
+### Error Screen
 ![image](https://github.com/user-attachments/assets/a4294e90-2f71-4e64-9613-db12fde9b9dd)
 
 
